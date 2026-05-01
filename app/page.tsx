@@ -175,7 +175,7 @@ export default function Home() {
       </section>
 
       <footer className="py-12 border-t bg-white text-center text-gray-400 text-sm italic">
-        © 2026 Барлық құқықтар қорғалған.
+        © 2026 Meir Halyk Zangeri компаниясы. Барлық құқықтар қорғалған.
       </footer>
     </main>
   )
