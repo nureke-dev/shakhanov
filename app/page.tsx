@@ -95,7 +95,7 @@ export default function Home() {
               <img src="/shakhanov.jpg" alt="Мұхтар Шаханов" className="object-cover w-full h-full" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent flex flex-col justify-end p-6">
                 <p className="text-white font-bold text-2xl">Мұхтар Шаханов</p>
-                <p className="text-gray-300 text-sm italic">Халық жазушысы</p>
+                <p className="text-gray-300 text-sm italic">Мұхтар Шаханов — қазақ ақыны, драматургі, қоғам қайраткері, Қазақстанның Еңбек Ері, Қазақстанның халық жазушысы және Қырғызстан халық ақыны.</p>
               </div>
             </div>
           </div>
