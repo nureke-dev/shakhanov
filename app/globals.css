@@ -12,10 +12,13 @@
   --font-mono: var(--font-geist-mono);
 }
 
+/* МІНЕ, БАСТЫ ӨЗГЕРІС: 
+   Құрылғыда "Түнгі режим" қосылса да, 
+   фонды мәжбүрлі түрде ақ (#ffffff), ал жазуды қара (#171717) етіп бекіттік */
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #ffffff;
+    --foreground: #171717;
   }
 }
 

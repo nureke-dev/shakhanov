@@ -91,14 +91,14 @@ export default function Submit() {
 
   if (success) {
     return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center p-6">
-        <div className="bg-white max-w-md w-full rounded-3xl shadow-xl p-10 text-center">
-          <div className="w-20 h-20 bg-green-100 text-green-500 rounded-full flex items-center justify-center mx-auto mb-6 text-4xl">
+      <div className="min-h-screen bg-gray-50 text-gray-900 flex items-center justify-center p-6 font-sans">
+        <div className="bg-white max-w-md w-full rounded-3xl shadow-xl p-10 text-center border border-gray-100">
+          <div className="w-20 h-20 bg-green-100 text-green-500 rounded-full flex items-center justify-center mx-auto mb-6 text-4xl font-bold">
             ✓
           </div>
           <h2 className="text-3xl font-bold text-gray-900 mb-4">Рақмет!</h2>
           <p className="text-gray-600 mb-8">Сіздің дауысыңыз сәтті қабылданды. Еліміздің тарихына қосқан үлесіңізге алғыс білдіреміз.</p>
-          <Link href="/" className="inline-block w-full px-6 py-3 bg-blue-600 text-white font-semibold rounded-xl hover:bg-blue-700 transition-all">
+          <Link href="/" className="inline-block w-full px-6 py-3 bg-blue-600 text-white font-semibold rounded-xl hover:bg-blue-700 transition-all shadow-md">
             Басты бетке қайту
           </Link>
         </div>
@@ -107,12 +107,12 @@ export default function Submit() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8 flex flex-col items-center">
+    <div className="min-h-screen bg-gray-50 text-gray-900 py-12 px-4 sm:px-6 lg:px-8 flex flex-col items-center font-sans">
       <Link href="/" className="text-blue-600 hover:text-blue-800 mb-8 font-medium mr-auto max-w-2xl w-full">
         ← Артқа қайту
       </Link>
       
-      <div className="bg-white max-w-2xl w-full rounded-3xl shadow-xl p-8 sm:p-12">
+      <div className="bg-white max-w-2xl w-full rounded-3xl shadow-xl p-8 sm:p-12 border border-gray-100">
         <h2 className="text-3xl font-bold text-gray-900 mb-2">Өтініш тіркеу</h2>
         <p className="text-gray-500 mb-8">e-Otinish арқылы алған талоныңызды жүктеп, өз дауысыңызды растаңыз.</p>
 
@@ -123,7 +123,7 @@ export default function Submit() {
               type="text"
               required
               placeholder="Мысалы: Серікұлы Нұрбек"
-              className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all"
+              className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all bg-white text-gray-900 placeholder-gray-400"
               value={name}
               onChange={(e) => setName(e.target.value)}
             />
@@ -132,11 +132,11 @@ export default function Submit() {
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">Тұратын қалаңыз</label>
             <select 
-              className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all bg-white"
+              className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all bg-white text-gray-900"
               value={city} 
               onChange={(e) => setCity(e.target.value)}
             >
-              {CITIES.map(c => <option key={c} value={c}>{c}</option>)}
+              {CITIES.map(c => <option key={c} value={c} className="text-gray-900">{c}</option>)}
             </select>
           </div>
 
@@ -148,7 +148,7 @@ export default function Submit() {
                   <path d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
                 <div className="flex text-sm text-gray-600 justify-center">
-                  <label htmlFor="file-upload" className="relative cursor-pointer bg-white rounded-md font-medium text-blue-600 hover:text-blue-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-blue-500 px-2 py-1">
+                  <label htmlFor="file-upload" className="relative cursor-pointer bg-white rounded-md font-medium text-blue-600 hover:text-blue-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-blue-500 px-2 py-1 shadow-sm border border-gray-200">
                     <span>Файлды таңдау</span>
                     <input 
                       id="file-upload" 
@@ -160,7 +160,7 @@ export default function Submit() {
                     />
                   </label>
                 </div>
-                <p className="text-xs text-gray-500">{file ? file.name : "Файл таңдалмаған"}</p>
+                <p className="text-xs text-gray-500 mt-2">{file ? file.name : "Файл таңдалмаған"}</p>
               </div>
             </div>
           </div>
@@ -170,13 +170,13 @@ export default function Submit() {
               <input
                 id="terms"
                 type="checkbox"
-                className="w-5 h-5 text-blue-600 border-gray-300 rounded focus:ring-blue-500 cursor-pointer"
+                className="w-5 h-5 text-blue-600 border-gray-300 rounded focus:ring-blue-500 cursor-pointer bg-white"
                 checked={agreed}
                 onChange={(e) => setAgreed(e.target.checked)}
               />
             </div>
             <div className="ml-3 text-sm">
-              <label htmlFor="terms" className="font-medium text-gray-700 cursor-pointer">Пайдаланушы келісімшарты</label>
+              <label htmlFor="terms" className="font-medium text-gray-900 cursor-pointer">Пайдаланушы келісімшарты</label>
               <p className="text-gray-500">Мен өз мәліметтерімнің өңделуіне және дауыс санау процесіне қатысуына келісім беремін.</p>
             </div>
           </div>
@@ -184,7 +184,7 @@ export default function Submit() {
           <button 
             type="submit" 
             disabled={loading}
-            className={`w-full flex justify-center py-4 px-4 border border-transparent rounded-xl shadow-sm text-lg font-medium text-white ${loading ? 'bg-blue-400 cursor-not-allowed' : 'bg-blue-600 hover:bg-blue-700'} focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-all`}
+            className={`w-full flex justify-center py-4 px-4 border border-transparent rounded-xl shadow-md text-lg font-medium text-white ${loading ? 'bg-blue-400 cursor-not-allowed' : 'bg-blue-600 hover:bg-blue-700'} focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-all`}
           >
             {loading ? "Жіберілуде..." : "Дауысты растау"}
           </button>

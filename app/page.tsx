@@ -55,24 +55,24 @@ export default function Home() {
   }
 
   return (
-    <main className="min-h-screen bg-gray-50 text-gray-900 font-sans scroll-smooth">
+    <main className="min-h-screen bg-white text-gray-900 font-sans scroll-smooth">
       
       {/* --- HERO SECTION --- */}
       <section className="bg-white border-b relative overflow-hidden">
-        <div className="absolute inset-0 bg-blue-50/20"></div>
+        <div className="absolute inset-0 bg-blue-50/30"></div>
         <div className="max-w-6xl mx-auto px-6 py-12 md:py-24 relative z-10 flex flex-col md:flex-row items-center gap-12">
           <div className="flex-1 text-left">
             <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-gray-900 mb-6 leading-tight">
               Мұхтар Шаханов атындағы <span className="text-blue-600">көше</span>
             </h1>
             
-            <div className="bg-white/80 backdrop-blur-sm border-l-4 border-blue-600 p-6 rounded-r-2xl mb-8 italic text-gray-800 shadow-md">
-              <p className="font-semibold text-blue-700 mb-2 uppercase tracking-wide text-xs text-nowrap">"Төрт ана" өлеңінен</p>
+            <div className="bg-white border-l-4 border-blue-600 p-6 rounded-r-2xl mb-8 italic text-gray-800 shadow-md">
+              <p className="font-semibold text-blue-700 mb-2 uppercase tracking-wide text-xs">"Төрт ана" өлеңінен</p>
               <div className="text-sm md:text-base space-y-1">
                 <p>Тағдырыңды тамырсыздық індетінен қалқала,</p>
                 <p>Мазмұн жоқта мазмұнсыздық шығады екен ортаға.</p>
                 <p>...Болу керек құдіретті төрт ана:</p>
-                <p className="font-bold text-gray-900 mt-2 text-blue-600">
+                <p className="font-bold text-blue-600 mt-2">
                   Туған жері, Туған тілі, Туған дәстүрі, Туған тарихы!
                 </p>
               </div>
@@ -89,30 +89,32 @@ export default function Home() {
           </div>
 
           <div className="flex-1 w-full flex justify-center md:justify-end">
-            <div className="relative w-full max-w-sm aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl ring-8 ring-white">
+            <div className="relative w-full max-w-sm aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl ring-8 ring-white bg-gray-200">
               <img src="/shakhanov.jpg" alt="Мұхтар Шаханов" className="object-cover w-full h-full" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent flex flex-col justify-end p-6">
-                <p className="text-white font-bold text-2xl">Мұхтар Шаханов</p>
-                <p className="text-gray-300 text-sm italic">Мұхтар Шаханов — қазақ ақыны, драматургі, қоғам қайраткері, Қазақстанның Еңбек Ері, Қазақстанның халық жазушысы және Қырғызстан халық ақыны.</p>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent flex flex-col justify-end p-6 text-white">
+                <p className="font-bold text-2xl">Мұхтар Шаханов</p>
+                <p className="text-gray-300 text-xs italic">Мұхтар Шаханов — қазақ ақыны, драматургі, қоғам қайраткері, Қазақстанның Еңбек Ері, Қазақстанның халық жазушысы және Қырғызстан халық ақыны.</p>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* --- COUNTER SECTION (Жөнделген нұсқа) --- */}
-      <section className="max-w-4xl mx-auto px-6 py-12 relative z-20">
-        <div className="bg-white rounded-3xl shadow-xl p-8 md:p-12 text-center border border-blue-50">
-          <h2 className="text-sm font-bold text-gray-400 mb-2 uppercase tracking-[0.2em]">Жиналған дауыс саны</h2>
-          <div className="text-7xl md:text-9xl font-black text-blue-600 tabular-nums">
-            {count.toLocaleString()}
-          </div>
-          <div className="mt-4 inline-flex items-center gap-2 text-green-600 font-bold bg-green-50 px-4 py-2 rounded-full text-xs">
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
-            </span>
-            REAL-TIME
+      {/* --- COUNTER SECTION --- */}
+      <section className="bg-gray-50 py-12 border-b border-gray-100">
+        <div className="max-w-4xl mx-auto px-6">
+          <div className="bg-white rounded-3xl shadow-xl p-8 md:p-12 text-center border border-blue-50">
+            <h2 className="text-sm font-bold text-gray-400 mb-2 uppercase tracking-[0.2em]">Жиналған дауыс саны</h2>
+            <div className="text-7xl md:text-9xl font-black text-blue-600 tabular-nums">
+              {count.toLocaleString()}
+            </div>
+            <div className="mt-4 inline-flex items-center gap-2 text-green-600 font-bold bg-green-50 px-4 py-2 rounded-full text-xs">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+              </span>
+              REAL-TIME
+            </div>
           </div>
         </div>
       </section>
@@ -122,7 +124,7 @@ export default function Home() {
         <div className="max-w-6xl mx-auto px-6 flex flex-col lg:flex-row items-center gap-16">
           
           <div className="flex-1">
-            <h2 className="text-3xl md:text-5xl font-bold mb-8 leading-tight">
+            <h2 className="text-3xl md:text-5xl font-bold mb-8 leading-tight text-white">
               Бейне-нұсқаулық:<br/>
               <span className="text-blue-400 font-light italic">Қалай дауыс береміз?</span>
             </h2>
