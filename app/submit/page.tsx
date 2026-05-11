@@ -2,7 +2,6 @@
 
 import { useState } from "react"
 import { supabase } from "@/lib/supabase"
-import { extractTicketNumber } from "@/lib/utils"
 import Link from "next/link"
 
 const CITIES = [
@@ -33,25 +32,7 @@ export default function Submit() {
     setLoading(true)
 
     try {
-      const ticketNumber = extractTicketNumber(file.name)
-      if (!ticketNumber) {
-        alert("Файл атынан талон нөмірі табылмады. Дұрыс e-Otinish талонын жүктеңіз.")
-        setLoading(false)
-        return
-      }
-
-      const { data: existing } = await supabase
-        .from("petitions")
-        .select("id")
-        .eq("ticket_number", ticketNumber)
-        .limit(1)
-
-      if (existing && existing.length > 0) {
-        alert(`Бұл талон (№${ticketNumber}) бұрын тіркелген! Қайтадан дауыс беру мүмкін емес.`)
-        setLoading(false)
-        return
-      }
-
+      
       const cleanName = file.name.replace(/\s+/g, "_").replace(/[^a-zA-Z0-9._-]/g, "")
       const path = `uploads/${Date.now()}-${cleanName}`
 
@@ -69,8 +50,7 @@ export default function Submit() {
         .insert({
           full_name: name,
           city,
-          file_url: fileUrl,
-          ticket_number: ticketNumber
+          file_url: fileUrl
         })
 
       if (insertError) throw new Error("Базаға жазу қатесі")
